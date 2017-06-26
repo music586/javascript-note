@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title> this is test xhr page</title>
+		<script src="../src/xhr.js"></script>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+	window.ajax(
+		{url:'https://cnodejs.org/api/v1/topics',
+		type:'GET',
+		cb: function(res){
+			if (res.success) {
+				res.data.forEach(function (item) {
+					document.write(item.content);
+				});
+			}
+		}})
+	</script>
+	</html>	
