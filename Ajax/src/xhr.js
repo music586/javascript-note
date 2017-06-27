@@ -19,9 +19,9 @@
 	var ajax = function (option) {
 		var url = option.url || '';
 		var method = option.type || 'GET';
+		handler(option);
 		xhr.open(method, url, true);
 		xhr.send();
-		handler(option);
 	}
 	win.ajax = ajax;
 })(window, document);
