@@ -6,7 +6,6 @@
 	var handler = function (option) {
 		xhr.onreadystatechange = function(){
 				if (xhr.readyState == '4' && xhr.status=='200') {
-					debugger;
 					var res = xhr.response;
 					if ('object'!= typeof xhr.response) {
 						res = JSON.parse(xhr.response);
@@ -15,12 +14,24 @@
 				}
 			}
 	} 
+
+	// 拼接get的请求参数
+	var addParam = function (option) {
+		for (var key in option.data){
+			option.url +=  option.url.indexOf('?') > -1 ? '&' : '?'
+			option.url += encodeURIComponent(key) + '=' + encodeURIComponent(option.data[key])
+		}
+		return option;
+	}
 	
 	var ajax = function (option) {
-		var url = option.url || '';
-		var method = option.type || 'GET';
 		handler(option);
+		addParam(option);
+		var url = option.url || '';
+		var method = option.type || 'GET';	
 		xhr.open(method, url, true);
+		xhr.setRequestHeader('Accept', 'text/xml');
+		// xhr.setRequestHeader('MyHeader', 'testHead');
 		xhr.send();
 	}
 	win.ajax = ajax;

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title> this is test xhr page</title>
-		<script src="../src/xhr.js"></script>
+		<script src="../src/xhr1.0.js"></script>
 	</head>
 	<body>
 		
@@ -12,6 +12,10 @@
 	window.ajax(
 		{url:'https://cnodejs.org/api/v1/topics',
 		type:'GET',
+		data: {
+			page: '1',
+			limit: '5',
+			tab: ''},
 		cb: function(res){
 			if (res.success) {
 				res.data.forEach(function (item) {
