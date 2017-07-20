@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title> this is test fetch page</title>
+		<script src="../src/fetch.js"></script>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+	window.fetch(
+		{url:'https://cnodejs.org/api/v1/topics',
+		type:'GET',
+		data: {
+			page: '1',
+			limit: '5',
+			tab: ''
+		},
+			timeout: 10,
+		}).then(function(res){
+			debugger;
+			if (res.success) {
+					res.data.forEach(function (item) {
+						document.write(item.content);
+					});
+				}
+		}).catch(function(err){
+			debugger;
+			console.log(err);
+		});
+	</script>
+	</html>	
