@@ -6,6 +6,7 @@
         let xhr = win.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject();
 
         xhr.onload = function(res){
+          // debugger;
           if(xhr.status == '200'){
             debugger;
             let response = xhr.response;

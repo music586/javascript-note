@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='../src/xhr_event.js'></script>
+</head>
+<body>
+	<div id="status"></div>
+</body>
+<script>
+	window.ajax({
+		url: 'https://cnodejs.org/api/v1/topics',
+		type: 'GET',
+			data: {
+				page: '1',
+				tab: '',
+				limit: '5'
+			},
+			cb: function (res){
+				console.log(res);
+			}
+	});
+</script>
+</html>

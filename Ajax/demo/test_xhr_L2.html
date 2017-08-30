@@ -11,7 +11,11 @@
 	<script>
 		window.ajax({
 			url: 'https://cnodejs.org/api/v1/topics',
-			data: {},
+			data: {
+				page: '1',
+				tab: '',
+				limit: '5'
+			},
 			cb: function (res){
 				console.log(res);
 			}
