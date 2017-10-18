@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <label>这是一个数字转动动画demo</label>
+    <h2 id="p_text">500</h2>
+</body>
+<script>
+    var min = 0;
+    var max = 1000;
+
+    var animation_number = function (startVal, endVal) {
+        var dom = document.getElementById('p_text');
+        var currDate = ++startVal;
+
+        if (currDate < endVal) {
+         setTimeout(function () {
+              dom.innerHTML = currDate;
+            animation_number(currDate, endVal);
+         }, 60);
+        }
+    }
+
+    animation_number(min, max); 
+      
+</script>
+</html>
