@@ -22,6 +22,10 @@
 ##### 主题六：ES6
 
 ##### 主题七：模块化
+    + AMD
+    + commonjs
+    + ES6模块
+        + es6shim,向前兼容垫片<https://github.com/esnext/es6-module-transpiler>
 
 ##### 主题八：错误处理，内存回收，性能优化
 

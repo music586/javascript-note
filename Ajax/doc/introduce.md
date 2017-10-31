@@ -9,6 +9,7 @@
 
 
 ##### promise对象
++ promise+ <https://github.com/then/promise>
 
 
 ##### fetch请求封装
